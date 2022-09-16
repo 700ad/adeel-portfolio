@@ -228,7 +228,7 @@ export default function Layout({ children }) {
           id="canvas"
           className="w-screen fixed h-screen bottom-0 right-0 top-0 left-0"
         ></div>
-        <Cursor></Cursor>
+        {/* <Cursor></Cursor> */}
         <Nav changeTheme={changeCurrentTheme} theme={theme} />
         <main>{children}</main>
         {/* <Footer /> */}
