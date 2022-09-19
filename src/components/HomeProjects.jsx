@@ -66,7 +66,7 @@ export default function HomeProjects() {
               theme === "dark" ? "to-stone-600" : " to-stone-300"
             }`}
           >
-            <div className="flex flex-col p-4">
+            <div className="flex cursor-pointer flex-col p-4">
               <div className="flex items-center justify-start">
                 <div className="w-3 h-3 bg-black mr-2 rounded-full"></div>
                 <p>Wolion Studios</p>
@@ -75,7 +75,7 @@ export default function HomeProjects() {
                 UI/UX + Web development
               </div>
             </div>
-            <div className="flex items-center justify-center">
+            <div className="flex cursor-pointer items-center justify-center">
               <div className="aspect-square w-2/3 flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
                   <g
@@ -125,7 +125,7 @@ export default function HomeProjects() {
               theme === "dark" ? "to-stone-600" : " to-stone-300"
             }`}
           >
-            <div className="flex flex-col p-4">
+            <div className="flex cursor-pointer flex-col p-4">
               <div className="flex items-center justify-start">
                 <div className="w-3 h-3 bg-black mr-2 rounded-full"></div>
                 <p>Credo</p>
@@ -134,7 +134,7 @@ export default function HomeProjects() {
                 Brandig + Web development
               </div>
             </div>
-            <div className="flex items-center justify-center">
+            <div className="flex cursor-pointer items-center justify-center">
               <div className="aspect-square w-2/3 flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
                   <g
@@ -167,7 +167,7 @@ export default function HomeProjects() {
               theme === "dark" ? "to-stone-600" : " to-stone-300"
             }`}
           >
-            <div className="flex flex-col p-4">
+            <div className="flex cursor-pointer flex-col p-4">
               <div className="flex items-center justify-start">
                 <div className="w-3 h-3 bg-black mr-2 rounded-full"></div>
                 <p>Escape Hotel</p>
@@ -176,9 +176,11 @@ export default function HomeProjects() {
                 ReBrandig + Web development
               </div>
             </div>
-            <div className="flex items-center justify-center">
+            <div className="flex cursor-pointer items-center justify-center">
               <div className="aspect-squre w-2/3 flex items-center pt-8 justify-center">
-                <div className="bg-black text-white p-10 text-6xl rounded">theFaces</div>
+                <div className="bg-black text-white p-10 text-6xl rounded">
+                  theFaces
+                </div>
               </div>
             </div>
           </div>
@@ -187,7 +189,7 @@ export default function HomeProjects() {
               theme === "dark" ? "to-stone-600" : " to-stone-300"
             }`}
           >
-            <div className="flex flex-col p-4">
+            <div className="flex cursor-pointer flex-col p-4">
               <div className="flex items-center justify-start">
                 <div className="w-3 h-3 bg-black mr-2 rounded-full"></div>
                 <p>Theorem Studio</p>
@@ -196,7 +198,7 @@ export default function HomeProjects() {
                 Branding + Web development
               </div>
             </div>
-            <div className="flex items-center justify-center">
+            <div className="flex cursor-pointer items-center justify-center">
               <div className="aspect-square w-2/3 flex items-center justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -415,12 +417,6 @@ export default function HomeProjects() {
             </div>
           </div>
         </div>
-
-        {/* {projectList.map((project, index) => {
-          return (
-            <Project key={index} title={project.title} color={project.color} />
-          );
-        })} */}
       </div>
       {/* <div id="outer" className="mo absolute inset-0 z-50">
         <svg

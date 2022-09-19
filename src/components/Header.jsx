@@ -12,7 +12,7 @@ export default function Header() {
   const opacity = useSpring(yRange, { stiffness: 400, damping: 40 });
 
   return (
-    <header className="w-screen sticky z-20 top-0 md:py-20 p-4 pt-14 md:px-10">
+    <header className="w-screen min-h-screen sticky z-20 top-0 md:py-20 p-4 pt-14 md:px-10">
       <div
         className={`grid gap-4 lg:gap-10 grid-cols-1 md:grid-cols-2 ${
           theme === "dark" ? "text-white" : " text-black"
