@@ -1,6 +1,6 @@
 import React from "react";
 import Project from "../../components/Project";
-import FullMobile from "../../images/projects/fulltheorem.png";
+import FullMobile from "../../images/projects/fulltheorem.webp";
 
 export default function EscapeHotel() {
   return (
