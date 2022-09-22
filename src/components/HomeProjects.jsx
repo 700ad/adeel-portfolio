@@ -3,6 +3,7 @@ import { ThemeContext } from "./Layout";
 import FullWidthoutline from "./FullWidthText";
 import { gsap } from "gsap";
 import { useScroll, motion, useSpring, useTransform } from "framer-motion";
+import { navigate } from "gatsby";
 
 export default function HomeProjects() {
   const theme = useContext(ThemeContext);
@@ -13,16 +14,15 @@ export default function HomeProjects() {
   const yRange = useTransform(scrollY, [4500 - offsetHeight, 20], [0, 1]);
   const opacity = useSpring(yRange, { stiffness: 400, damping: 40 });
 
-  const showOver = () => {
-    setHidden(!hidden);
-    console.log("SHOW");
+  const modeSwitcher = (route) => {
     gsap
       .timeline()
-      .set(".overlay__path", {
+      .set("#outer", { display: "block" })
+      .set(".overlay__path_m", {
         attr: { d: "M 0 0 V 0 Q 50 0 100 0 V 0 z" },
       })
       .to(
-        ".overlay__path",
+        ".overlay__path_m",
         {
           duration: 0.8,
           ease: "power4.in",
@@ -30,10 +30,29 @@ export default function HomeProjects() {
         },
         0
       )
-      .to(".overlay__path", {
+      .to(".overlay__path_m", {
         duration: 0.3,
         ease: "power2",
         attr: { d: "M 0 0 V 100 Q 50 100 100 100 V 0 z" },
+        onComplete: () => {
+          navigate(route);
+        },
+      })
+      .set(".overlay__path_m", {
+        attr: { d: "M 0 100 V 0 Q 50 0 100 0 V 100 z" },
+      })
+      .to(".overlay__path_m", {
+        duration: 0.3,
+        ease: "power2.in",
+        attr: { d: "M 0 100 V 50 Q 50 100 100 50 V 100 z" },
+      })
+      .to(".overlay__path_m", {
+        duration: 0.8,
+        ease: "power4",
+        attr: { d: "M 0 100 V 100 Q 50 100 100 100 V 100 z" },
+        onComplete: () => {
+          gsap.set("#outer", { display: "none" });
+        },
       });
   };
 
@@ -61,7 +80,7 @@ export default function HomeProjects() {
         </motion.div>
         <div className="min-h-screen pt-96 relative z-30 grid grid-cols-1 gap-4 md:gap-0 lg:grid-cols-6 p-4 md:px-10 ">
           <div
-            onClick={() => showOver()}
+            onClick={() => modeSwitcher("/projects/wolion-studio")}
             className={`col-span-1 cursor-pointer aspect-square bg-gradient-to-br from-transparent ${
               theme === "dark" ? "to-stone-600" : " to-stone-300"
             }`}
@@ -170,10 +189,10 @@ export default function HomeProjects() {
             <div className="flex cursor-pointer flex-col p-4">
               <div className="flex items-center justify-start">
                 <div className="w-3 h-3 bg-black mr-2 rounded-full"></div>
-                <p>Escape Hotel</p>
+                <p>theFaces</p>
               </div>
               <div className="flex nord pl-5 opacity-80">
-                ReBrandig + Web development
+                Web + App Development
               </div>
             </div>
             <div className="flex cursor-pointer items-center justify-center">
@@ -220,7 +239,7 @@ export default function HomeProjects() {
                         transform="matrix(0.819, -0.574, 0.574, 0.819, 4.621, 61.632)"
                         fill="none"
                         stroke="#f45959"
-                        stroke-width="12"
+                        strokeWidth="12"
                       >
                         <ellipse
                           cx="53.726"
@@ -243,7 +262,7 @@ export default function HomeProjects() {
                         transform="matrix(0.819, -0.574, 0.574, 0.819, 0, 70.875)"
                         fill="none"
                         stroke="#f45959"
-                        stroke-width="12"
+                        strokeWidth="12"
                       >
                         <ellipse
                           cx="53.726"
@@ -266,7 +285,7 @@ export default function HomeProjects() {
                         transform="matrix(0.819, -0.574, 0.574, 0.819, 4.621, 61.632)"
                         fill="none"
                         stroke="#f45959"
-                        stroke-width="12"
+                        strokeWidth="12"
                       >
                         <ellipse
                           cx="53.726"
@@ -289,7 +308,7 @@ export default function HomeProjects() {
                         transform="matrix(0.819, -0.574, 0.574, 0.819, 0, 70.875)"
                         fill="none"
                         stroke="#f45959"
-                        stroke-width="12"
+                        strokeWidth="12"
                       >
                         <ellipse
                           cx="53.726"
@@ -349,17 +368,18 @@ export default function HomeProjects() {
             </div>
           </div>
           <div
-            className={`lg:col-start-3 lg:row-start-3 aspect-square col-span-1 lg:col-span-2 bg-gradient-to-br from-transparent  ${
+            onClick={() => modeSwitcher("/projects/escape-hotel ")}
+            className={`lg:col-start-3 lg:row-start-3 aspect-square cursor-pointer col-span-1 lg:col-span-2 bg-gradient-to-br from-transparent  ${
               theme === "dark" ? "to-stone-600" : " to-stone-300"
             }`}
           >
             <div className="flex flex-col p-4">
               <div className="flex items-center justify-start">
                 <div className="w-3 h-3 bg-black mr-2 rounded-full"></div>
-                <p>Wolion Studios</p>
+                <p>Escape Hotel</p>
               </div>
               <div className="flex nord pl-5 opacity-80">
-                UI/UX + Web development
+                ReBranding + Web development
               </div>
             </div>
             <div className="flex items-center justify-center">
@@ -403,7 +423,7 @@ export default function HomeProjects() {
                       transform="translate(10822.526 4475.144)"
                       fill="none"
                       stroke="#707070"
-                      stroke-width="1"
+                      strokeWidth="1"
                     />
                     <path
                       id="Path_4"
@@ -418,7 +438,7 @@ export default function HomeProjects() {
           </div>
         </div>
       </div>
-      {/* <div id="outer" className="mo absolute inset-0 z-50">
+      <div id="outer" className="mo fixed inset-0 z-50 hidden">
         <svg
           className="overlay w-full h-full"
           width="100%"
@@ -434,7 +454,7 @@ export default function HomeProjects() {
             d="M 0 100 V 100 Q 50 100 100 100 V 100 z"
           />
         </svg>
-      </div> */}
+      </div>
     </>
   );
 }
