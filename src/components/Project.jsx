@@ -19,8 +19,8 @@ export default function Project({
           <div className="pt-20 text-3xl uppercase">{description}</div>
         </div>
         <div className="p-4 md:px-10">
-          <div className="">
-            <img src={photo} alt={alt} />
+          <div className="border border-orange-400">
+            <img className="w-full" src={photo} alt={alt} />
           </div>
         </div>
         <div className="p-4 md:px-10 py-36 flex items-center justify-center">

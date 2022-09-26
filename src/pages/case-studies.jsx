@@ -98,7 +98,9 @@ export default function CaseStudies() {
           <div className="inner">
             <div className="bg one">
               <div className="flex flex-col items-center justify-center">
-                <h2 className="text-6xl uppercase pb-8">Escape Hotel</h2>
+                <h2 className="text-6xl text-center uppercase pb-8">
+                  Escape Hotel
+                </h2>
                 <div className="flex nord">Rebranding / Web Development</div>
               </div>
             </div>
@@ -110,7 +112,9 @@ export default function CaseStudies() {
           <div className="inner">
             <div className="bg">
               <div className="flex flex-col items-center justify-center">
-                <h2 className="text-6xl uppercase pb-8">Escape Hotel</h2>
+                <h2 className="text-6xl text-center uppercase pb-8">
+                  Theorem Studio
+                </h2>
                 <div className="flex nord">Rebranding / Web Development</div>
               </div>
             </div>
@@ -122,8 +126,10 @@ export default function CaseStudies() {
           <div className="inner">
             <div className="bg">
               <div className="flex flex-col items-center justify-center">
-                <h2 className="text-6xl uppercase pb-8">Escape Hotel</h2>
-                <div className="flex nord">Rebranding / Web Development</div>
+                <h2 className="text-6xl text-center uppercase pb-8">
+                  theFaces
+                </h2>
+                <div className="flex nord">Web + Mobie Development</div>
               </div>
             </div>
           </div>
@@ -134,8 +140,8 @@ export default function CaseStudies() {
           <div className="inner">
             <div className="bg">
               <div className="flex flex-col items-center justify-center">
-                <h2 className="text-6xl uppercase pb-8">Escape Hotel</h2>
-                <div className="flex nord">Rebranding / Web Development</div>
+                <h2 className="text-6xl text-center uppercase pb-8">Credo</h2>
+                <div className="flex nord">Branding / Web Development</div>
               </div>
             </div>
           </div>
@@ -146,8 +152,10 @@ export default function CaseStudies() {
           <div className="inner">
             <div className="bg">
               <div className="flex flex-col items-center justify-center">
-                <h2 className="text-6xl uppercase pb-8">Escape Hotel</h2>
-                <div className="flex nord">Rebranding / Web Development</div>
+                <h2 className="text-6xl text-center uppercase pb-8">
+                  Wolion Studio
+                </h2>
+                <div className="flex nord">Branding / Web Development</div>
               </div>
             </div>
           </div>
